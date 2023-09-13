@@ -70,10 +70,19 @@ public class Loan {
 
     public void makePayment(double paymentAmount) {
         if (paymentAmount > 0 && !isCancelled) {
+
+            //assume the payment made
             double totalAmountPaid = amount - remainingAmount;
+
+            //interest accrued by Lender
             double interestAccrued = totalAmountPaid * interestPerDay;
+
+            //remaining amount
             remainingAmount -= paymentAmount;
-            double newInterestAccrued = totalAmountPaid * interestPerDay;
+
+            //Calculate new interest accrued after the payment on the assumed payment done
+            double newInterestAccrued = paymentAmount * interestPerDay;
+
             interestAccrued = newInterestAccrued - interestAccrued;
             if (remainingAmount <= 0) {
                 remainingAmount = 0;

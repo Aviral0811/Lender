@@ -19,7 +19,7 @@ public class Main {
 
             // Make payments on loans
             loan1.makePayment(5000);
-            loan2.makePayment(10000);
+            loan2.makePayment(2000);
             loan3.makePayment(20000);
             loan4.makePayment(15000);
 
